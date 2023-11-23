@@ -4,27 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/GameWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/SettingsWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Bot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Blue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Minus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Plus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Red.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Unit.java" afterDir="false" />
+    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="version 0.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Blue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Blue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Minus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Minus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Plus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Plus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Red.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,18 +85,19 @@
       <option name="presentableId" value="Default" />
       <updated>1700608113780</updated>
     </task>
+    <task id="LOCAL-00001" summary="version 0.1">
+      <created>1700777705303</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700777705303</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/game/Map.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="version 0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 0.1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,7 +1,9 @@
 package org.example.game.gamePlay.units;
 
-import java.awt.*;
+import lombok.NoArgsConstructor;
 
+import java.awt.*;
+@NoArgsConstructor
 public class Plus extends Unit{
     public Plus(int positionOnFieldX, int positionOnFieldY) {
         super(positionOnFieldX, positionOnFieldY);

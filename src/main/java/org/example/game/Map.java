@@ -2,6 +2,8 @@ package org.example.game;
 
 import lombok.Data;
 import org.example.game.gamePlay.GameField;
+import org.example.game.gamePlay.players.Human;
+import org.example.game.gamePlay.units.Minus;
 import org.example.game.gamePlay.units.Plus;
 import org.example.game.gamePlay.units.Unit;
 
@@ -24,6 +26,15 @@ public class Map extends JPanel {
 
     Map() {
         this.gameField = new GameField(4, 3, 3);
+
+    }
+
+
+    void startNewGame(int mode, int fieldSizeX, int fieldSizeY, int wLen) {
+        gameField = new GameField(fieldSizeX, fieldSizeY, wLen); //todo сделать логику игры против бота
+        gameField.addNewPlayer(new Human("ivan"),new Plus());
+        gameField.addNewPlayer(new Human("daniil"),new Minus());
+
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -31,12 +42,6 @@ public class Map extends JPanel {
 
             }
         });
-    }
-
-
-    void startNewGame(int mode, int fieldSizeX, int fieldSizeY, int wLen) {
-        gameField = new GameField(fieldSizeX, fieldSizeY, wLen); //todo сделать логику игры против бота
-
         repaint();
     }
 
@@ -83,7 +88,7 @@ public class Map extends JPanel {
     /**
      * метод начала игры
      */
-    private void gameConfig() {
+    private void gameConfig() {//todo при необходимости удалить
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -98,7 +103,8 @@ public class Map extends JPanel {
         int cellX = mouseEvent.getX() / cellWidth;
         int cellY = mouseEvent.getY() / cellHeight;
 
-        if (gameField.doTurn(new Plus(cellX, cellY), cellY, cellX)) {
+        Unit currentUnit = gameField.getPlayers().get(gameField.getCurrentPlayer());
+        if (gameField.doTurn(currentUnit, cellY, cellX)) {
             repaint();
             System.out.println("удачный ход");//todo добавить логику в случае если ячейка свободна
         } else {

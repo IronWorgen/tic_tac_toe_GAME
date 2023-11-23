@@ -2,12 +2,14 @@ package org.example.game.gamePlay.units;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.awt.*;
 @ToString
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class Unit {
 
     private int positionOnFieldX ;

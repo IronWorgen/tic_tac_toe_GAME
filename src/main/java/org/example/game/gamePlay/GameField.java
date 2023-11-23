@@ -6,8 +6,10 @@ import org.example.game.gamePlay.players.Player;
 import org.example.game.gamePlay.units.Unit;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * класс с логикой игры в крестики нолики
@@ -25,11 +27,17 @@ public class GameField {
      * список игроков и их фигур
      */
     private Map<Player, Unit> players;
+    /**
+     * игрок который сейчас совершает ход
+     */
+    private Player currentPlayer;
 
     public GameField(int fieldSizeX, int fieldSizeY, int winnerLineLength) {
         this.fieldSizeX = fieldSizeX;
         this.fieldSizeY = fieldSizeY;
         WinnerLineLength = winnerLineLength;
+
+        players = new HashMap<>();
 
         gameField= new ArrayList<>();
         for (int i = 0; i < fieldSizeY; i++) {
@@ -50,6 +58,7 @@ public class GameField {
     public boolean doTurn(Unit unit, int rowNumber, int columnNumber){
         if(cellIsEmpty(rowNumber, columnNumber)){
             gameField.get(rowNumber).set(columnNumber, unit);
+            nextPlayer();
             return true;
         }else {
             return false;
@@ -73,4 +82,31 @@ public class GameField {
     public Unit winnerSearch(){
         return null;//todo сделать логику поиска победителя игры
     }
+
+
+    /**
+     * передача хода следующему пользователю
+     */
+    private void nextPlayer(){
+        if (currentPlayer.getNumberInOrder()==players.size()){
+            currentPlayer= players.keySet().stream().filter((x)->x.getNumberInOrder()==1).toList().get(0);
+        }else{
+            currentPlayer= players.keySet().stream().filter((x)->x.getNumberInOrder()==currentPlayer.getNumberInOrder()+1).toList().get(0);
+        }
+    }
+
+    /**
+     * создание нового пользователя + присвоение ему номера в игре
+     * @param player - пользователь
+     * @param unit - фигура пользователя
+     */
+    public void addNewPlayer(Player player, Unit unit){
+        if (currentPlayer==null){
+            currentPlayer=player;
+        }
+        player.setNumberInOrder(players.size()+1);
+        players.put(player, unit);
+
+    }
+
 }
