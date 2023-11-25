@@ -26,13 +26,12 @@ public class Map extends JPanel {
 
     Map() {
         this.gameField = new GameField(4, 3, 3);
-
     }
 
 
     void startNewGame(int mode, int fieldSizeX, int fieldSizeY, int wLen) {
         gameField = new GameField(fieldSizeX, fieldSizeY, wLen); //todo сделать логику игры против бота
-        gameField.addNewPlayer(new Human("ivan"),new Plus());
+        gameField.addNewPlayer(new Human("ivan"),new Plus());//todo продумать добавление новых игроков и  их фигур
         gameField.addNewPlayer(new Human("daniil"),new Minus());
 
         addMouseListener(new MouseAdapter() {
@@ -98,24 +97,37 @@ public class Map extends JPanel {
         });
     }
 
+    /**
+     * при нажатии на кнопку мыши пользователь совершает ход
+     * выполняется проверка не занята ли ячейка
+     * в случае, если ячейка не занята, прерисовывает игровое поле
+     * @param mouseEvent
+     */
     private void update(MouseEvent mouseEvent) {
 
         int cellX = mouseEvent.getX() / cellWidth;
         int cellY = mouseEvent.getY() / cellHeight;
 
-        Unit currentUnit = gameField.getPlayers().get(gameField.getCurrentPlayer());
+        Unit  currentUnit = gameField.getPlayers().get(gameField.getCurrentPlayer()).clone();
+        currentUnit.setPositionOnFieldX(cellX);
+        currentUnit.setPositionOnFieldY(cellY);
         if (gameField.doTurn(currentUnit, cellY, cellX)) {
             repaint();
-            System.out.println("удачный ход");//todo добавить логику в случае если ячейка свободна
+
+            List<Unit> winner = gameField.winnerSearch();//todo сделать обработку победителя
+            if (winner!=null){
+                for (int i = 0; i < winner.size()   ; i++) {
+                    System.out.println(winner.get(i).toString());
+                }
+            }
+
+           //todo добавить логику в случае если ячейка свободна
         } else {
-            System.out.println("клетка занята");//todo добавить логику в случае если ячейка занята
+            //todo добавить логику в случае если ячейка занята
         }
 
 
-        System.out.printf("x=%d,\ty=%d\n", cellX, cellY);
         repaint();
 
     }
-
-
 }

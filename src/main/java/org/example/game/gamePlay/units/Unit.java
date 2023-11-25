@@ -10,9 +10,9 @@ import java.awt.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class Unit {
+public abstract class Unit implements Cloneable{
 
-    private int positionOnFieldX ;
+    private int positionOnFieldX;
     private int positionOnFieldY;
 
     /**
@@ -24,4 +24,16 @@ public abstract class Unit {
      * @param sizeY - высота ячейки
      */
     public abstract void print(Graphics graphics, int posX, int posY, int sizeX, int sizeY);
+
+
+    @Override
+    public Unit clone() {
+        try {
+            Unit clone = (Unit) super.clone();
+            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }

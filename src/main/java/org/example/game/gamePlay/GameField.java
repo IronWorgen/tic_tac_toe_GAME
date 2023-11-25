@@ -79,8 +79,45 @@ public class GameField {
      * найти победителя
      * @return - фигуру побудителя (если победитель найден) в противном случае null
      */
-    public Unit winnerSearch(){
-        return null;//todo сделать логику поиска победителя игры
+    public List<Unit> winnerSearch(){
+        for (List<Unit> units : gameField) {
+            List<Unit> winnerLine = horizontalLineCheck(units);
+            if (winnerLine!=null){
+                return winnerLine;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * поиск победителя в горизонтальной строке
+     * @param line - строка на поле в которой надо произвести поиск
+     * @return - список победителей или null если победителей не нашлось
+     */
+    private List<Unit> horizontalLineCheck(List<Unit> line){
+        List<Unit> winners = new ArrayList<>();
+
+        for (Unit currentUnit : line) {
+
+            if (currentUnit == null){
+                winners = new ArrayList<>();
+                continue;
+            }
+
+            if (winners.size()==0){
+                winners.add(currentUnit);
+
+            }else if (winners.get(0).getClass().isInstance(currentUnit)){
+                winners.add(currentUnit);
+                if (winners.size()==WinnerLineLength){
+                    return winners;
+                }
+            }else{
+                winners =  new ArrayList<>();
+                winners.add(currentUnit);
+            }
+        }
+        return null;
     }
 
 

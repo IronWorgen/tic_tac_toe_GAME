@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="version 0.1">
+    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="add pvp mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/GameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Blue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Blue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Minus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Minus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Plus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Plus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Red.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,12 +88,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700777705303</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="version 0.2">
+      <created>1700781707063</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700781707063</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="version 0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 0.1" />
+    <MESSAGE value="version 0.2" />
+    <MESSAGE value="add pvp mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pvp mode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
