@@ -13,9 +13,12 @@ public class Minus extends Unit {
 
     @Override
     public void print(Graphics graphics, int posX, int posY, int sizeX, int sizeY) {
+        Graphics2D graphics2D = (Graphics2D) graphics;
+        graphics2D.setStroke(new BasicStroke(5));
 
 
         graphics.drawLine(posX+sizeX/4,posY+sizeY/2, posX+sizeX*3/4, posY+sizeY/2);
+        graphics2D.setStroke(new BasicStroke(1));
     }
 
     @Override

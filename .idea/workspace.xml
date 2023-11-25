@@ -8,10 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/GameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/SettingsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/SettingsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Minus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Minus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Plus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Plus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700781707063</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add pvp mode">
+      <created>1700871597202</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700871597202</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -103,6 +110,13 @@
     <MESSAGE value="version 0.2" />
     <MESSAGE value="add pvp mode" />
     <option name="LAST_COMMIT_MESSAGE" value="add pvp mode" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="gameField.get(0).get(0)" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

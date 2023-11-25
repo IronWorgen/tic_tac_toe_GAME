@@ -23,16 +23,19 @@ public class Map extends JPanel {
      * размещение фигур на игровом поле + логика игры
      */
     GameField gameField;
+    List<Unit> winnersList;
 
     Map() {
-        this.gameField = new GameField(4, 3, 3);
+        this.gameField = new GameField(3, 3, 3);
     }
 
 
     void startNewGame(int mode, int fieldSizeX, int fieldSizeY, int wLen) {
+        winnersList = null;//обнуление победителей
+
         gameField = new GameField(fieldSizeX, fieldSizeY, wLen); //todo сделать логику игры против бота
-        gameField.addNewPlayer(new Human("ivan"),new Plus());//todo продумать добавление новых игроков и  их фигур
-        gameField.addNewPlayer(new Human("daniil"),new Minus());
+        gameField.addNewPlayer(new Human("ivan"), new Plus());//todo продумать добавление новых игроков и  их фигур
+        gameField.addNewPlayer(new Human("daniil"), new Minus());
 
         addMouseListener(new MouseAdapter() {
             @Override
@@ -81,7 +84,30 @@ public class Map extends JPanel {
         for (int i = 1; i < gameField.getFieldSizeX(); i++) {
             graphics.drawLine(i * cellWidth, 0, i * cellWidth, panelWidth);
         }
+        if (winnersList != null) {
+            showWinners(graphics);
 
+        }
+
+
+    }
+
+    /**
+     * отрисовывает победителя игры
+     *
+     * @param graphics
+     */
+    private void showWinners(Graphics graphics) {
+        graphics.setColor(Color.red);
+        Unit firstUnitFromWinnersList = winnersList.get(0);
+        int previousCellCenterX = firstUnitFromWinnersList.getPositionOnFieldX() * cellWidth + cellWidth / 2;
+        int previousCellCenterY = firstUnitFromWinnersList.getPositionOnFieldY() * cellHeight + cellHeight / 2;
+        for (int i = 1; i < winnersList.size(); i++) {
+            int currentCellCenterX = winnersList.get(i).getPositionOnFieldX() * cellWidth + cellWidth / 2;
+            int currentCellCenterY = winnersList.get(i).getPositionOnFieldY() * cellHeight + cellHeight / 2;
+            graphics.drawLine(previousCellCenterX, previousCellCenterY, currentCellCenterX, currentCellCenterY);
+        }
+        graphics.setColor(Color.black);
     }
 
     /**
@@ -101,6 +127,7 @@ public class Map extends JPanel {
      * при нажатии на кнопку мыши пользователь совершает ход
      * выполняется проверка не занята ли ячейка
      * в случае, если ячейка не занята, прерисовывает игровое поле
+     *
      * @param mouseEvent
      */
     private void update(MouseEvent mouseEvent) {
@@ -108,20 +135,15 @@ public class Map extends JPanel {
         int cellX = mouseEvent.getX() / cellWidth;
         int cellY = mouseEvent.getY() / cellHeight;
 
-        Unit  currentUnit = gameField.getPlayers().get(gameField.getCurrentPlayer()).clone();
+        Unit currentUnit = gameField.getPlayers().get(gameField.getCurrentPlayer()).clone();
         currentUnit.setPositionOnFieldX(cellX);
         currentUnit.setPositionOnFieldY(cellY);
         if (gameField.doTurn(currentUnit, cellY, cellX)) {
+            winnersList = gameField.winnerSearch();//todo сделать обработку победителя
             repaint();
 
-            List<Unit> winner = gameField.winnerSearch();//todo сделать обработку победителя
-            if (winner!=null){
-                for (int i = 0; i < winner.size()   ; i++) {
-                    System.out.println(winner.get(i).toString());
-                }
-            }
 
-           //todo добавить логику в случае если ячейка свободна
+            //todo добавить логику в случае если ячейка свободна
         } else {
             //todo добавить логику в случае если ячейка занята
         }
