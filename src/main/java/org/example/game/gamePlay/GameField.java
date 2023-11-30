@@ -81,6 +81,7 @@ public class GameField {
      * @return - фигуру побудителя (если победитель найден) в противном случае null
      */
     public List<Unit> winnerSearch() {
+
         // поиск по горизонтальным строкам
         for (List<Unit> units : gameField) {
             List<Unit> winnerLine = lineCheck(units);
@@ -184,6 +185,8 @@ public class GameField {
 
 
         }
+
+
         return null;
     }
 

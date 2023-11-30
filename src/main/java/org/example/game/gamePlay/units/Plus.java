@@ -5,11 +5,14 @@ import lombok.ToString;
 
 import java.awt.*;
 
-@NoArgsConstructor
 
 public class Plus extends Unit {
+    public Plus() {
+        super.setName("Плюсик");
+    }
+
     public Plus(int positionOnFieldX, int positionOnFieldY) {
-        super(positionOnFieldX, positionOnFieldY);
+        super("Плюсик",positionOnFieldX, positionOnFieldY);
     }
 
     @Override

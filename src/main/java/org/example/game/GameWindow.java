@@ -1,6 +1,8 @@
 package org.example.game;
 
 import lombok.NoArgsConstructor;
+import org.example.game.gamePlay.players.Player;
+import org.example.game.gamePlay.units.Unit;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,6 +37,7 @@ public class GameWindow extends JFrame {
         buttonStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 settingsWindow.setVisible(true);
             }
         });
@@ -51,8 +54,8 @@ public class GameWindow extends JFrame {
 
     }
 
-    public void startNewGame(int mode, int fieldSizeX, int fieldSizeY, int wLen) {
-        map.startNewGame(mode, fieldSizeX, fieldSizeY, wLen);
+    public void startNewGame(java.util.Map<Player, Unit>playerUnitMap, int fieldSizeX, int fieldSizeY, int wLen) {
+        map.startNewGame(playerUnitMap, fieldSizeX, fieldSizeY, wLen);
     }
 
 

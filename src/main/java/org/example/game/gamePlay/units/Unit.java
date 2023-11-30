@@ -11,8 +11,18 @@ import java.awt.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class Unit implements Cloneable{
+    /**
+     * название фигуры
+     */
+    private String name;
+    /**
+     * расположение на поле (координата X клетки)
+     */
 
     private int positionOnFieldX;
+    /**
+     * расположение на поле (координата Y клетки)
+     */
     private int positionOnFieldY;
 
     /**

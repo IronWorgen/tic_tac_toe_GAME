@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="add pvp mode">
+    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="add winner search">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/CreatePlayerWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/exceptions/WrongPlayerNameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/services/PlayerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/GameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/SettingsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/SettingsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Blue.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Minus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Minus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Plus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Plus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Red.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +55,14 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;cn.yiiguxing.plugin.translate&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.game.exceptions" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -102,16 +113,29 @@
       <option name="project" value="LOCAL" />
       <updated>1700871597202</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add winner search">
+      <created>1700955206166</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700955206166</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="version 0.1" />
     <MESSAGE value="version 0.2" />
     <MESSAGE value="add pvp mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pvp mode" />
+    <MESSAGE value="add winner search" />
+    <option name="LAST_COMMIT_MESSAGE" value="add winner search" />
   </component>
   <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.example.game.gamePlay.units.Plus" memberName="name" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="gameField.get(0).get(0)" />

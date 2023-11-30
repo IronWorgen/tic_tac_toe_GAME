@@ -3,6 +3,7 @@ package org.example.game;
 import lombok.Data;
 import org.example.game.gamePlay.GameField;
 import org.example.game.gamePlay.players.Human;
+import org.example.game.gamePlay.players.Player;
 import org.example.game.gamePlay.units.Minus;
 import org.example.game.gamePlay.units.Plus;
 import org.example.game.gamePlay.units.Unit;
@@ -11,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.List;
 
 public class Map extends JPanel {
@@ -25,13 +27,15 @@ public class Map extends JPanel {
     GameField gameField;
     List<Unit> winnersList;
 
+
     Map() {
         this.gameField = new GameField(3, 3, 3);
     }
 
 
-    void startNewGame(int mode, int fieldSizeX, int fieldSizeY, int wLen) {
+    void startNewGame(java.util.Map<Player, Unit>playerUnitMap, int fieldSizeX, int fieldSizeY, int wLen) {
         winnersList = null;//обнуление победителей
+
 
         gameField = new GameField(fieldSizeX, fieldSizeY, wLen); //todo сделать логику игры против бота
         gameField.addNewPlayer(new Human("ivan"), new Plus());//todo продумать добавление новых игроков и  их фигур
@@ -141,7 +145,9 @@ public class Map extends JPanel {
         if (gameField.doTurn(currentUnit, cellY, cellX)) {
             winnersList = gameField.winnerSearch();//todo сделать обработку победителя
             repaint();
-
+            if (winnersList!=null){
+                this.removeMouseListener(this.getMouseListeners()[0]);
+            }
 
             //todo добавить логику в случае если ячейка свободна
         } else {
