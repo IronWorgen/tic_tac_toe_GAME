@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="pvp tic tac toe complete">
-      <change afterPath="$PROJECT_DIR$/src/main/java/chat/Chat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chat/ChatError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chat/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chat/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chat/fileRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RunChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunChat.java" afterDir="false" />
-    </list>
+    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="chat v0.1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701393502141</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="chat v0.1">
+      <created>1701424583341</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701424583341</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -153,7 +152,8 @@
     <MESSAGE value="add winner search" />
     <MESSAGE value="v0.2" />
     <MESSAGE value="pvp tic tac toe complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="pvp tic tac toe complete" />
+    <MESSAGE value="chat v0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="chat v0.1" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
