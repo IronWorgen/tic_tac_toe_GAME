@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="v0.2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/RunChat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/units/X.java" afterDir="false" />
+    <list default="true" id="d343e43a-5ae4-47a2-9fc6-93d26884a32d" name="Changes" comment="pvp tic tac toe complete">
+      <change afterPath="$PROJECT_DIR$/src/main/java/chat/Chat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chat/ChatError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chat/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chat/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chat/fileRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunTicTacToeGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/CreatePlayerWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/CreatePlayerWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/SettingsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/SettingsWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/gamePlay/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/services/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/services/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RunChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunChat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,26 +41,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;cn.yiiguxing.plugin.translate&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "All Places",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.game.exceptions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Программирование\GB\java\JDK\Lesson1_GIU\Swing\src\main\java" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.RunChat">
+    <configuration name="RunChat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RunChat" />
+      <module name="Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RunTicTacToeGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RunTicTacToeGame" />
       <module name="Swing" />
@@ -78,6 +87,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RunChat" />
         <item itemvalue="Application.RunTicTacToeGame" />
       </list>
     </recent_temporary>
@@ -126,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701384766264</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="pvp tic tac toe complete">
+      <created>1701393502141</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701393502141</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,7 +152,8 @@
     <MESSAGE value="add pvp mode" />
     <MESSAGE value="add winner search" />
     <MESSAGE value="v0.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.2" />
+    <MESSAGE value="pvp tic tac toe complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="pvp tic tac toe complete" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
