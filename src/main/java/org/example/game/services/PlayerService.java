@@ -47,4 +47,11 @@ public class PlayerService {
         }
         return true;
     }
+
+    /**
+     * удалить всех игроков
+     */
+    public void  removeAll(){
+        playerUnitMap = new HashMap<>();
+    }
 }

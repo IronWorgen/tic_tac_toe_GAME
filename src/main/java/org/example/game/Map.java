@@ -25,27 +25,33 @@ public class Map extends JPanel {
      * размещение фигур на игровом поле + логика игры
      */
     GameField gameField;
+    /**
+     * линия победителя
+     */
     List<Unit> winnersList;
-
 
     Map() {
         this.gameField = new GameField(3, 3, 3);
     }
 
-
-    void startNewGame(java.util.Map<Player, Unit>playerUnitMap, int fieldSizeX, int fieldSizeY, int wLen) {
+    /**
+     * начинает новую игру
+     * @param playerUnitMap - список игроков участвующих в следующей игре.
+     * @param fieldSizeX - количество столбцов игрового поля
+     * @param fieldSizeY - количество строк игрового поля
+     * @param wLen - длина линии, для победы
+     */
+    void startNewGame(java.util.Map<Player, Unit> playerUnitMap, int fieldSizeX, int fieldSizeY, int wLen) {
+        gameField = new GameField(fieldSizeX, fieldSizeY, wLen);
         winnersList = null;//обнуление победителей
-
-
-        gameField = new GameField(fieldSizeX, fieldSizeY, wLen); //todo сделать логику игры против бота
-        gameField.addNewPlayer(new Human("ivan"), new Plus());//todo продумать добавление новых игроков и  их фигур
-        gameField.addNewPlayer(new Human("daniil"), new Minus());
+        for (java.util.Map.Entry<Player, Unit> playerUnitEntry : playerUnitMap.entrySet()) {
+            gameField.addNewPlayer(playerUnitEntry.getKey(), playerUnitEntry.getValue());
+        }
 
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
                 update(e);
-
             }
         });
         repaint();
@@ -112,20 +118,21 @@ public class Map extends JPanel {
             graphics.drawLine(previousCellCenterX, previousCellCenterY, currentCellCenterX, currentCellCenterY);
         }
         graphics.setColor(Color.black);
+        JFrame winner = new JFrame();
+        winner.setSize(300, 200);
+        winner.setLocationRelativeTo(this);
+
+        JPanel panel = new JPanel();
+        String winnerMessage = String.format("Победитель:\t %s", gameField.getCurrentPlayer().getName());
+        JLabel winnerLabel = new JLabel(winnerMessage);
+        winnerLabel.setFont(new Font("TimesRoman", Font.BOLD, 22));
+        panel.add(winnerLabel);
+        winner.add(panel, BorderLayout.CENTER);
+        winner.setVisible(true);
+
     }
 
-    /**
-     * метод начала игры
-     */
-    private void gameConfig() {//todo при необходимости удалить
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                update(e);
 
-            }
-        });
-    }
 
     /**
      * при нажатии на кнопку мыши пользователь совершает ход
@@ -139,21 +146,24 @@ public class Map extends JPanel {
         int cellX = mouseEvent.getX() / cellWidth;
         int cellY = mouseEvent.getY() / cellHeight;
 
-        Unit currentUnit = gameField.getPlayers().get(gameField.getCurrentPlayer()).clone();
+        Unit testunit = gameField.getPlayers().get(gameField.getCurrentPlayer());
+        Unit currentUnit = testunit.clone();
         currentUnit.setPositionOnFieldX(cellX);
         currentUnit.setPositionOnFieldY(cellY);
         if (gameField.doTurn(currentUnit, cellY, cellX)) {
-            winnersList = gameField.winnerSearch();//todo сделать обработку победителя
+            winnersList = gameField.winnerSearch();
+
             repaint();
-            if (winnersList!=null){
+            if (winnersList != null) {
                 this.removeMouseListener(this.getMouseListeners()[0]);
+            } else {
+                gameField.nextPlayer();
             }
 
-            //todo добавить логику в случае если ячейка свободна
-        } else {
-            //todo добавить логику в случае если ячейка занята
-        }
 
+        } else {
+            JOptionPane.showMessageDialog(new JFrame(),"Ячейка занята");
+        }
 
         repaint();
 

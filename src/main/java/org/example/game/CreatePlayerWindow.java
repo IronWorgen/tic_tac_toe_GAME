@@ -1,9 +1,11 @@
 package org.example.game;
 
+import org.example.game.exceptions.WrongPlayerNameException;
 import org.example.game.gamePlay.players.Player;
 import org.example.game.gamePlay.units.Minus;
 import org.example.game.gamePlay.units.Plus;
 import org.example.game.gamePlay.units.Unit;
+import org.example.game.gamePlay.units.X;
 import org.example.game.services.PlayerService;
 
 import javax.swing.*;
@@ -25,7 +27,7 @@ public class CreatePlayerWindow extends JFrame {
 
     public CreatePlayerWindow(SettingsWindow settingsWindow,PlayerService playerService) throws HeadlessException {
         this.playerService = playerService;
-        unitTypes=new ArrayList<>(Arrays.asList(new Unit[]{new Plus(), new Minus()}));
+        unitTypes=new ArrayList<>(Arrays.asList(new Unit[]{new Plus(), new Minus(), new X()}));
         this.settingsWindow = settingsWindow;
         this.setLocationRelativeTo(settingsWindow);
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -52,20 +54,33 @@ public class CreatePlayerWindow extends JFrame {
 
         confirmButton.addActionListener((event)->{
             this.setVisible(false);
-            playerService.addPlayer(new Player(playerNameTextField.getText()), createUnitFromComboBox());
+            settingsWindow.setVisible(true);
+            try {
+                playerService.addPlayer(new Player(playerNameTextField.getText()), createUnitFromComboBox());
+            }catch (WrongPlayerNameException e ){
+                JOptionPane.showMessageDialog(new JFrame(), e.getMessage());
+            }
 
+            settingsWindow.updatePlayersList();
         });
         mainPanel.add(confirmButton);
 
         this.add(mainPanel);
     }
 
+    /**
+     * создание объекта фигурки
+     * @return
+     */
     private Unit createUnitFromComboBox(){
         if(selectUnitComboBox.getSelectedItem().equals("Плюсик")){
             return new Plus();
         } else if (selectUnitComboBox.getSelectedItem().equals("Минус")) {
             return new Minus();
+        }else if (selectUnitComboBox.getSelectedItem().equals("Крестик")) {
+            return new X();
         }
+
         return null;
     }
 }

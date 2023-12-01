@@ -57,7 +57,6 @@ public class GameField {
     public boolean doTurn(Unit unit, int rowNumber, int columnNumber) {
         if (cellIsEmpty(rowNumber, columnNumber)) {
             gameField.get(rowNumber).set(columnNumber, unit);
-            nextPlayer();
             return true;
         } else {
             return false;
@@ -182,11 +181,7 @@ public class GameField {
             if (winnerLine != null) {
                 return winnerLine;
             }
-
-
         }
-
-
         return null;
     }
 
@@ -226,11 +221,10 @@ public class GameField {
 
     }
 
-
     /**
      * передача хода следующему пользователю
      */
-    private void nextPlayer() {
+    public void nextPlayer() {
         if (currentPlayer.getNumberInOrder() == players.size()) {
             currentPlayer = players.keySet().stream().filter((x) -> x.getNumberInOrder() == 1).toList().get(0);
         } else {
